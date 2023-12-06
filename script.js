@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
 document.addEventListener('click', e => {
    let text = '';
    const classSEL = e.target.classList.contains('super_element');
-   if (classSEL == true) {
+   if (classSEL === true) {
       text = 'присутствует';
    } else {
       text = 'отсутствует';
@@ -51,4 +51,10 @@ document.querySelector('ul').addEventListener('click', function (e) {
 // --В 3 задании querySelector должен сначала определить наличие искомого класса, и только в console.log() определяется элемент.
 
 // 7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
+// Немного изменил задание, поменяв цвет кнопок в каждом втором Li.
+document.querySelectorAll('li:nth-child(2n) button')
+   .forEach((el) => {
+      el.style.backgroundColor = 'red'
+   });
+
 
