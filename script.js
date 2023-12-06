@@ -14,11 +14,19 @@ window.addEventListener('load', () => {
 // сообщение наподобие:
 // - Класс "super_element" присутствует в элементе "div".
 // - сообщение должно определять присутствует или отсутствует класс
-// "super_element".
-// - у элемента, а также выводить в нижнем регистре верный тег в данной строке,
+// "super_element" у элемента, а также выводить в нижнем регистре верный тег в данной строке,
 // по которому был совершен клик.
 // - Необходимо использовать делегирование.
-
+document.addEventListener('click', event => {
+   let text = '';
+   const classSEL = event.target.classList.contains('super_element');
+   if (classSEL == true) {
+      text = 'присутствует';
+   } else {
+      text = 'отсутствует';
+   }
+   console.log(`Класс "super_element" ${text} в элементе "${event.target.tagName.toLowerCase()}".`);
+});
 // 4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение:
 // "Вы навели на textarea."
 
