@@ -37,6 +37,12 @@ document.querySelector('textarea').addEventListener('mouseover', () =>
 // по которой был произведен клик.Если клик был не по кнопке, то ничего
 // выводить не нужно.
 // Необходимо использовать делегирование.
+document.querySelector('ul').addEventListener('click', function (e) {
+   if (e.target.tagName !== 'BUTTON') {
+      return;
+   }
+   console.log(e.target.textContent);
+});
 
 // 6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только
 // потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul ? Ответ
